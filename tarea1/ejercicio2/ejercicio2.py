@@ -6,7 +6,7 @@ def save_data(profiles, filename="archivo.dat"):
     folder = os.path.dirname(__file__)
     filepath = os.path.join(folder, filename)
 
-    with open(filename, "wb") as f:
+    with open(filepath, "wb") as f:
         pickle.dump(profiles, f)
 
 def load_data(filename="archivo.dat"):
@@ -14,7 +14,7 @@ def load_data(filename="archivo.dat"):
     filepath = os.path.join(folder, filename)
     
     try:
-        with open(filename, "rb") as f:
+        with open(filepath, "rb") as f:
             profiles = pickle.load(f)
             return profiles
     except FileNotFoundError:
